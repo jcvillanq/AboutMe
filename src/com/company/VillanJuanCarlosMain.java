@@ -92,15 +92,12 @@ public class VillanJuanCarlosMain {
     }
 
     private void ejecutarApp(){
-
-
-        while (true) {
+       int opcion;
+       do {
             mostrarMenu(perfil.getName());
             // usaremos try - catch para capturar posibles errores
-
-
             try {
-                int opcion = input.nextInt();
+                 opcion = input.nextInt();
 
                 switch(opcion) {
                     case 1:
@@ -120,15 +117,13 @@ public class VillanJuanCarlosMain {
                         System.out.println("No valido. Intente nuevamente.");
                 }
 
-                // Pausa para que el usuario pueda leer antes de mostrar el menú de nuevo
-                System.out.println("\nPresione Enter para continuar...");
-                input.nextLine();
                 input.nextLine();
             } catch (Exception e) {
                 System.out.println("No valido. Por favor, ingrese un número.");
                 input.next(); // Limpiamos el buffer
+                opcion=0;
             }
-        }
+        }while(opcion != 4);
 
     }
 }
